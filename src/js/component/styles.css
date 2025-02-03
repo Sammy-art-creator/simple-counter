@@ -1,0 +1,35 @@
+body {
+  background-color: black;
+}
+
+.counter-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px; 
+  font-size: 2rem; 
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.digit-box {
+  background-color: black;
+  color: white; 
+  padding: 20px 15px;
+  border: 2px solid gray; 
+  border-radius: 5px; 
+  width: 60px; 
+  text-align: center; 
+  display: inline-block;
+}
+
+.fa-regular {
+  background-color: black;
+  color: white; 
+  padding: 20px 15px;
+  border: 2px solid gray; 
+  border-radius: 5px; 
+  width: 60px; 
+  text-align: center; 
+  display: inline-block;
+  align-content: center;
+}

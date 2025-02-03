@@ -1,26 +1,27 @@
-import React from "react";
 
-//include images into your bundle
-import rigoImage from "../../img/rigo-baby.jpg";
+import "./styles.css";
 
-//create your first component
-const Home = () => {
-	return (
-		<div className="text-center">
-			<h1 className="text-center mt-5">Hello Rigo!</h1>
-			<p>
-				<img src={rigoImage} />
-			</p>
-			<a href="#" className="btn btn-success">
-				If you see this green button... bootstrap is working...
-			</a>
-			<p>
-				Made by{" "}
-				<a href="http://www.4geeksacademy.com">4Geeks Academy</a>, with
-				love!
-			</p>
-		</div>
-	);
+import React, { useState, useEffect } from 'react';
+
+const SecondsCounter = () => {
+  const [seconds, setSeconds] = useState(0);
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setSeconds(prevSeconds => prevSeconds + 1);
+    }, 1000);
+    return () => clearInterval(intervalId);
+  }, []);
+  return (
+    <div className="counter-container">
+      <i className="fa-regular fa-clock"></i> 
+      {String(seconds).padStart(6, '0').split('').map((digit, index) => (
+        <div key={index} className="digit-box">
+        
+          {digit}
+        </div>
+      ))}
+    </div>
+  );
 };
 
-export default Home;
+export default SecondsCounter;
